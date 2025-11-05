@@ -1,0 +1,49 @@
+//A rectangle has a length and a width. A rectangle should be able
+// to provide its area and perimeter. 
+//A rectangle can indicate whether it is smaller than 
+//another rectangle in terms of area. A rectangle can 
+//indicate whether it is in fact a square. 
+//(This is mainly about the concepts needed to represent a rectangle,
+// but the StdDraw library is included in your repository. 
+//You can also provide a rectangle the ability to draw itself on the screen)
+public class rectangle{
+    private double length;
+    private double width;
+
+    public rectangle (double length, double width){
+        this.length = length;
+        this.width = width;
+    }
+    public static double rectangleArea (double length, double width){
+        double area = length * width;
+        System.out.println("My area is: " + area);
+        return area;
+    } 
+    public static double rectanglePerimeter (double length, double width){
+        double perimeter = (length * 2) + (width * 2);
+        System.out.println("My perimeter is: " + perimeter);
+        return perimeter;
+    }
+    public static boolean rectangleAreaSmaller(double length, double width, double otherLength, double otherWidth){
+        double otherArea = otherLength * otherWidth;
+        double area = rectangleArea(length, width);
+        if area < otherArea{
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    public static boolean isSquare(double length, double width){
+        if(length == width){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    public static void main(String[] args){
+        rectangle r1 = new rectangle(4,5);
+        System.out.print("My area is: " + r1.rectangleArea);
+    }
+}
